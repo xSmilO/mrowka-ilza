@@ -2,16 +2,25 @@ import React from "react";
 
 const adresInfoStyle = "text-80-gray text-sm flex flex-col gap-1 ml-6";
 
+const Social = ({ icon, altText }) => [
+    <a href="#" className="h-full">
+        <img src={icon} className="h-full block" alt={altText} />
+    </a>,
+];
+
 function Footer() {
     return (
-        <div className="h-[30rem] bg-secondary-400 border-t-[12px] border-primary-400 relative text-white flex flex-col justify-between items-center">
+        <div
+            className="h-[30rem] sm:h-[10rem] bg-secondary-400 border-t-[12px] sm:border-t-5 border-primary-400 relative text-white flex flex-col sm:justify-center justify-between items-center"
+            id="footer"
+        >
             <img
                 src="/assets/icon.svg"
                 alt=""
-                className="w-16 absolute top-0 left-20"
+                className="w-16 lg:w-10 absolute top-0 left-20 xl:left-6 sm:hidden block"
             />
 
-            <div className="flex w-full justify-evenly p-16">
+            <div className="flex w-full justify-evenly p-16 sm:hidden">
                 <div className="flex flex-col gap-6  text-sm">
                     <h5 className="text-lg font-bold">Kontakt</h5>
 
@@ -74,7 +83,24 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="text-center border-t-2 w-full border-secondary-300 p-8">
+            {/* mobile */}
+
+            <img
+                src="/assets/logo2.svg"
+                alt="logo"
+                className="hidden sm:block absolute left-0 top-2 h-6"
+            />
+
+            <div className="flex gap-10 h-6">
+                <Social icon={"/assets/fb.svg"} altText={"facebook icon"} />
+                <Social
+                    icon={"/assets/linkedIn.svg"}
+                    altText={"linkedIn icon"}
+                />
+                <Social icon={"/assets/tw.svg"} altText={"twitter icon"} />
+            </div>
+
+            <div className="text-center border-t-2 w-full border-secondary-300 p-8 sm:hidden block">
                 <p className="text-50-gray text-sm">&copy; 2019 PSB Mrówka</p>
             </div>
         </div>

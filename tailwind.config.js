@@ -15,6 +15,7 @@ export default {
                 "gray-border": "rgba(0, 0, 0, 0.2);",
                 "70-black": "rgba(0,0,0,0.7)",
                 "80-black": "rgba(0,0,0,0.8)",
+                "20-black": "rgba(0,0,0,0.2)",
                 "80-gray": "rgba(217, 217, 217, 0.8)",
                 "50-gray": "rgba(200, 200, 200, 0.5);",
                 "20-white": "rgba(246, 246, 246, 0.2)",
@@ -34,7 +35,25 @@ export default {
                 10: "10px",
             },
         },
+
+        screens: {
+            "2xl": { max: "1535px" },
+            // => @media (max-width: 1535px) { ... }
+
+            xl: { max: "1279px" },
+            // => @media (max-width: 1279px) { ... }
+
+            lg: { max: "1023px" },
+            // => @media (max-width: 1023px) { ... }
+
+            md: { max: "767px" },
+            // => @media (max-width: 767px) { ... }
+
+            sm: { max: "639px" },
+            // => @media (max-width: 639px) { ... }
+        },
     },
+
     plugins: [],
 };
 

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React from "react";
 
 const daysInfo = [
@@ -31,6 +30,7 @@ const daysInfo = [
         hours: "9.00-20.00",
     },
 ];
+
 function Day({ day, hours }) {
     return (
         <li className="flex justify-between items-center">
@@ -43,10 +43,10 @@ function Day({ day, hours }) {
 function Contact() {
     return (
         <div
-            className="h-[70rem] w-full flex items-center justify-center relative p-10"
+            className="h-[70rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 md:px-0 lg:px-4 mt-10 rounded-b-3xl z-10 bg-gray-100 sm:translate-y-5"
             id="contact"
         >
-            <div className="flex justify-between w-full px-16 gap-5 h-[28rem]">
+            <div className="flex justify-between w-full px-16 lg:px-4 md:px-1 gap-5 h-[28rem] sm:hidden">
                 <div className="bg-gray-200 p-16 flex flex-col gap-6 w-[35%] flex-grow justify-center">
                     <h2 className="text-70-black text-3xl font-bold">
                         Godziny otwarcia
@@ -63,19 +63,19 @@ function Contact() {
                     </ul>
                 </div>
                 <div className="w-1/2 flex flex-col justify-between gap-5">
-                    <div className="bg-primary-400 flex flex-col gap-6 p-20 w-full flex-grow-[2]">
+                    <div className="bg-primary-400 flex flex-col justify-center gap-6 p-20 md:p-8 xl:p-10 w-full flex-grow-[2]">
                         <div className="flex items-center gap-6 ">
-                            <h2 className="text-4xl font-bold text-80-black">
+                            <h2 className="text-4xl font-bold text-80-black lg:text-3xl md:text-2xl">
                                 Kontakt
                             </h2>
                             <div className="w-0.5 bg-gray-border h-4" />
-                            <div className=" text-white bg-secondary-400 p-2 px-4 rounded-3xl">
+                            <div className=" text-white md:text-sm lg:text-sm bg-secondary-400 p-2 px-4 rounded-3xl">
                                 Napisz do nas!
                             </div>
                         </div>
 
-                        <div className="flex text-80-black justify-between w-[85%]">
-                            <div className="flex items-center gap-3">
+                        <div className="flex lg:flex-col lg:gap-3 text-80-black justify-between w-[85%]">
+                            <div className="flex items-center gap-5">
                                 <div className="w-5 -translate-y-1/2">
                                     <img
                                         src="/assets/phone-black.svg"
@@ -109,7 +109,7 @@ function Contact() {
                         </div>
                     </div>
 
-                    <div className="text-white h-1/3 bg-secondary-300 flex items-center px-16 gap-4">
+                    <div className="text-white h-1/3 bg-secondary-300 flex items-center px-16 gap-4 xl:p-10">
                         <div className="-translate-y-1/2">
                             <img
                                 src="/assets/location.svg"
@@ -125,14 +125,52 @@ function Contact() {
                 </div>
             </div>
 
-            {/* <div
-                className="bg-primary-400 absolute p-2 text-black bottom-16 right-16 rounded-full cursor-pointer"
-                onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-            >
-                <img src="/assets/arrowUp.svg" className="w-4 h-4" />
-            </div> */}
+            {/* mobile */}
+
+            <div className="hidden sm:flex flex-col w-full gap-6">
+                <h2 className="text-2xl font-bold ">Kontakt</h2>
+                <div className="w-full h-1 bg-20-black rounded-3xl" />
+
+                <div className="flex flex-col gap-8 justify-between mt-2">
+                    <div className="flex gap-10">
+                        <img
+                            src="/assets/phone-black.svg"
+                            className="h-full w-7"
+                        />
+
+                        <div>
+                            <h4 className="font-bold">Telefon</h4>
+                            <p>(0-00) 000 00 00</p>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-10">
+                        <img
+                            src="/assets/mail-black.svg"
+                            className="h-full w-7"
+                        />
+
+                        <div>
+                            <h4 className="font-bold">Email</h4>
+                            <p>miasto@psbmrowka.pl</p>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-10 mt-10">
+                        <img
+                            src="/assets/location-black.svg"
+                            className="h-full w-7"
+                        />
+
+                        <div>
+                            <h4 className="font-semibold">
+                                ul. Nazwa ulicy 123
+                            </h4>
+                            <p>27-100 Iłża</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
