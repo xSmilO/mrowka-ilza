@@ -1,57 +1,17 @@
 import React, { useRef, useState } from "react";
 import OfferItem from "./OfferItem";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Virtual, FreeMode } from "swiper";
+import { Virtual, FreeMode, Scrollbar } from "swiper";
 import { motion } from "framer-motion";
 import { scrollTo } from "../utils";
+import { OffersInfo } from "../utils/data";
 
 import "swiper/css";
 import "swiper/css/virtual";
-
-const categoriesInfo = [
-    {
-        title: "Materiały budowlane",
-        description:
-            "Takie jak: cegły, beton, cement, pustaki, kruszywa, farby, kleje, izolacje, drzwi, okna.",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Narzędzia ogrodnicze",
-        description:
-            "Kosiarki, podkaszarki, nożyce do żywopłotów, a także narzędzia do pielęgnacji roślin.",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Narzędzia ręczne i elektryczne",
-        description:
-            "Młotki, wiertarki, szlifierki, piły, wkrętarki, a także wiele innych produktów.",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Wyposażenie4",
-        description: "Lorem impsu i agarg ag r arha ahahahf",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Wyposażenie5",
-        description: "Lorem impsu i agarg ag r arha ahahahf",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Wyposażenie6",
-        description: "Lorem impsu i agarg ag r arha ahahahf",
-        image: "/assets/category.jpeg",
-    },
-    {
-        title: "Wyposażenie7",
-        description: "Lorem impsu i agarg ag r arha ahahahf",
-        image: "/assets/category.jpeg",
-    },
-];
+import "swiper/css/scrollbar";
 
 function Offer() {
     const swiperRef = useRef(null);
-    const [swiperProgres, setSwiperProgres] = useState(0);
 
     return (
         <section
@@ -80,26 +40,34 @@ function Offer() {
                     </motion.div>
                     <Swiper
                         spaceBetween={30}
-                        slidesPerView={2}
+                        slidesPerView={"auto"}
                         breakpoints={{
-                            1000: {
+                            690: {
+                                slidesPerView: 1,
+                            },
+
+                            900: {
                                 slidesPerView: 2,
+                            },
+
+                            1500: {
+                                slidesPerView: 3,
                                 spaceBetween: 50,
                             },
 
-                            1650: {
+                            1600: {
                                 slidesPerView: 4,
-                                spaceBetween: 50,
                             },
                         }}
-                        modules={[Virtual]}
+                        modules={[Virtual, Scrollbar]}
                         ref={swiperRef}
-                        onProgress={(swiper, progress) => {
-                            setSwiperProgres(progress);
-                        }}
                         className="sm:hidden block"
+                        scrollbar={{
+                            draggable: true,
+                            horizontalClass: "horizontal-scroll",
+                        }}
                     >
-                        {categoriesInfo.map((data, idx) => (
+                        {OffersInfo.map((data, idx) => (
                             <SwiperSlide key={idx}>
                                 <OfferItem
                                     title={data.title}
@@ -111,19 +79,22 @@ function Offer() {
                         ))}
                     </Swiper>
 
+                    {/* mobile slider */}
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={"-20%"}
-                        modules={[Virtual, FreeMode]}
-                        onProgress={(swiper, progress) => {
-                            setSwiperProgres(progress);
-                        }}
+                        spaceBetween={"-10%"}
+                        slidesPerView={"auto"}
+                        modules={[Virtual, FreeMode, Scrollbar]}
                         freeMode={{ enabled: true, sticky: false }}
                         className="sm:block hidden"
                         centeredSlidesBounds={true}
                         edgeSwipeThreshold={10}
+                        scrollbar={{
+                            enabled: true,
+                            draggable: true,
+                            horizontalClass: "horizontal-scroll",
+                        }}
                     >
-                        {categoriesInfo.map((data, idx) => (
+                        {OffersInfo.map((data, idx) => (
                             <SwiperSlide key={idx}>
                                 <OfferItem
                                     title={data.title}
@@ -135,16 +106,6 @@ function Offer() {
                         ))}
                     </Swiper>
 
-                    <div className="w-full h-2 absolute -bottom-4 sm:h-1">
-                        <div className="w-full h-full bg-80-gray overflow-hidden">
-                            <div
-                                className="h-full bg-primary-400 origin-left sm:bg-secondary-500"
-                                style={{
-                                    transform: `scaleX(${swiperProgres})`,
-                                }}
-                            />
-                        </div>
-                    </div>
                     <motion.div
                         className="w-10 h-10 bg-secondary-300 flex justify-center items-center rounded-full absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 z-10 cursor-pointer hover:opacity-90 transition-[opacity] duration-400 sm:hidden"
                         onClick={() => {
@@ -174,6 +135,7 @@ function Offer() {
                 <motion.button
                     className="hidden sm:block text-white bg-primary-400 self-center px-10 py-2 text-lg font-semibold rounded-3xl"
                     onClick={() => scrollTo("footer")}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
                 >
                     Kontakt

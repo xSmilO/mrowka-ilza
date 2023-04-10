@@ -74,7 +74,7 @@ function Nav() {
             <img
                 src="/assets/icon.svg"
                 alt=""
-                className="absolute top-0 left-40 md:left-10 w-16 sm:w-14 z-50 sm:left-5 sm:fixed"
+                className="absolute top-0 left-40 lg:left-10 w-16 sm:w-14 z-50 sm:left-5 sm:fixed"
             />
             <ul className="flex items-center gap-14 text-md sm:hidden">
                 <NavLinkDesktop title={"Oferta"} destination={"offer"} />

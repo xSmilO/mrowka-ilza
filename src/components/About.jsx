@@ -41,16 +41,18 @@ function Day({ day, hours }) {
 }
 
 function About() {
-    const [about, setAbout] = useState(false);
+    const [openAbout, setOpenAbout] = useState(false);
     const [openHours, setOpenHours] = useState(false);
 
     return (
         <div
-            className="h-[45rem] justify-center items-center border-primary-400 border-b-10 sm:border-none flex sm:h-auto sm:px-8 sm:flex-col"
+            className="h-[45rem] lg:h-[60rem] justify-center items-center border-primary-400 border-b-10 sm:border-none flex sm:h-auto sm:px-8 sm:flex-col"
             id="about"
         >
-            <div className="flex justify-evenly w-[80%] md:w-[90%] gap-10 md:gap-2 sm:hidden">
-                <h2 className="font-bold text-4xl md:translate-y-0">O nas</h2>
+            <div className="flex justify-evenly w-[80%] lg:w-[95%] xl:w-[90%] md:w-[90%] gap-10 lg:gap-4 md:gap-2 sm:hidden">
+                <h2 className="font-bold text-6xl xl:text-5xl -translate-y-5 xl:-translate-y-3 text-secondary-300">
+                    O nas
+                </h2>
                 <div className="w-48 md:w-32 h-1 bg-primary-400 translate-y-3" />
 
                 <div className="flex flex-col gap-8 w-1/2 font-light text-80-black text-lg">
@@ -79,16 +81,20 @@ function About() {
                 <div
                     className="flex justify-between border-b-2 border-black py-8 items-center transition-all duration-75"
                     style={{
-                        borderColor: about ? "black" : "rgba(31, 26, 23, 0.1)",
+                        borderColor: openAbout
+                            ? "black"
+                            : "rgba(31, 26, 23, 0.1)",
                     }}
                 >
                     <h2 className="text-xl font-bold">O nas</h2>
                     <button
                         className="h-5 w-5 cursor-pointer transition-all duration-75"
                         style={{
-                            transform: about ? "rotate(0)" : "rotate(180deg)",
+                            transform: openAbout
+                                ? "rotate(0)"
+                                : "rotate(180deg)",
                         }}
-                        onClick={() => setAbout(!about)}
+                        onClick={() => setOpenAbout(!openAbout)}
                     >
                         <img
                             src="/assets/arrowUp.svg"
@@ -100,7 +106,7 @@ function About() {
                 <section
                     className="flex-col gap-5 text-sm overflow-hidden duration-100"
                     style={{
-                        display: about ? "flex" : "none",
+                        display: openAbout ? "flex" : "none",
                     }}
                 >
                     <p className="leading-7">

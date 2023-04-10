@@ -91,7 +91,7 @@ function Footer() {
                 className="hidden sm:block absolute left-0 top-2 h-6"
             />
 
-            <div className="flex gap-10 h-6">
+            <div className="hidden sm:flex gap-10 h-6">
                 <Social icon={"/assets/fb.svg"} altText={"facebook icon"} />
                 <Social
                     icon={"/assets/linkedIn.svg"}

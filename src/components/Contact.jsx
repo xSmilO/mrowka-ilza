@@ -1,35 +1,5 @@
 import React from "react";
-
-const daysInfo = [
-    {
-        day: "Poniedziałek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Wtorek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Środa",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Czwartek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Piątek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Sobota",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Niedziela",
-        hours: "9.00-20.00",
-    },
-];
+import { daysInfo } from "../utils/data";
 
 function Day({ day, hours }) {
     return (
@@ -43,12 +13,12 @@ function Day({ day, hours }) {
 function Contact() {
     return (
         <div
-            className="h-[70rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 md:px-0 lg:px-4 mt-10 rounded-b-3xl z-10 bg-gray-100 sm:translate-y-5"
+            className="h-[70rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 mt-10 rounded-b-[1.8rem] z-10 bg-gray-100 sm:translate-y-5"
             id="contact"
         >
             <div className="flex justify-between w-full px-16 lg:px-4 md:px-1 gap-5 h-[28rem] sm:hidden">
-                <div className="bg-gray-200 p-16 flex flex-col gap-6 w-[35%] flex-grow justify-center">
-                    <h2 className="text-70-black text-3xl font-bold">
+                <div className="bg-gray-200 p-16 md:p-10 lg:p-12 flex flex-col gap-6 w-[35%] flex-grow justify-center">
+                    <h2 className="text-70-black text-3xl md:text-2xl font-bold">
                         Godziny otwarcia
                     </h2>
 
@@ -63,13 +33,13 @@ function Contact() {
                     </ul>
                 </div>
                 <div className="w-1/2 flex flex-col justify-between gap-5">
-                    <div className="bg-primary-400 flex flex-col justify-center gap-6 p-20 md:p-8 xl:p-10 w-full flex-grow-[2]">
+                    <div className="bg-primary-400 flex flex-col justify-center md:items-center gap-6 p-20 md:p-4 lg:p-8 xl:p-10 w-full flex-grow-[2]">
                         <div className="flex items-center gap-6 ">
                             <h2 className="text-4xl font-bold text-80-black lg:text-3xl md:text-2xl">
                                 Kontakt
                             </h2>
                             <div className="w-0.5 bg-gray-border h-4" />
-                            <div className=" text-white md:text-sm lg:text-sm bg-secondary-400 p-2 px-4 rounded-3xl">
+                            <div className=" text-white lg:text-sm bg-secondary-300 p-2 px-4 rounded-3xl">
                                 Napisz do nas!
                             </div>
                         </div>
@@ -127,7 +97,7 @@ function Contact() {
 
             {/* mobile */}
 
-            <div className="hidden sm:flex flex-col w-full gap-6">
+            <div className="hidden sm:flex flex-col w-full gap-6 px-8">
                 <h2 className="text-2xl font-bold ">Kontakt</h2>
                 <div className="w-full h-1 bg-20-black rounded-3xl" />
 

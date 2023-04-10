@@ -26,7 +26,8 @@ export default {
             },
 
             fontFamily: {
-                body: ["Open Sans", "sans-serif"],
+                body: ["Open sans", "sans-serif"],
+                poppins: ["Poppins", "sans-serif"],
             },
 
             borderWidth: {
