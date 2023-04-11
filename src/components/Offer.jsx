@@ -15,7 +15,7 @@ function Offer() {
 
     return (
         <section
-            className="flex flex-col h-[80rem] sm:h-[65rem] items-center px-16 sm:px-6 mt-24 gap-28"
+            className="flex flex-col h-[80rem] sm:h-auto items-center px-16 sm:px-6 mt-24 gap-28 sm:gap-8 sm:pb-32"
             id="offer"
         >
             <h2 className="relative text-secondary-300 text-4xl font-bold px-8 p-4 after:block after:absolute after:bottom-0 after:w-full sm:after:w-[50%] after:h-1 after:left-1/2 after:-translate-x-1/2 after:bg-primary-400">
@@ -46,7 +46,7 @@ function Offer() {
                                 slidesPerView: 1,
                             },
 
-                            900: {
+                            800: {
                                 slidesPerView: 2,
                             },
 
@@ -123,8 +123,8 @@ function Offer() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-10">
-                <p className="text-center text-secondary-400 text-lg sm:text-base sm:text-black">
+            <div className="flex flex-col gap-10 sm:mt-20">
+                <p className="text-center text-lg sm:text-base text-90-black">
                     Ponadto, sklep oferuje&nbsp;
                     <span className="font-bold">konkurencyjne ceny</span> oraz
                     różnego rodzaju <br className="sm:hidden inline-block" />
@@ -134,7 +134,7 @@ function Offer() {
 
                 <motion.button
                     className="hidden sm:block text-white bg-primary-400 self-center px-10 py-2 text-lg font-semibold rounded-3xl"
-                    onClick={() => scrollTo("footer")}
+                    onClick={() => scrollTo("contact", 80)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.9 }}
                 >

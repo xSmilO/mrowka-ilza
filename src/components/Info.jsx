@@ -3,7 +3,7 @@ import { scrollTo } from "../utils";
 
 function Info() {
     return (
-        <div className="h-[50rem] sm:h-auto bg-offer sm:bg-none bg-cover relative sm:block">
+        <section className="h-[50rem] sm:h-auto bg-offer sm:bg-none bg-cover relative sm:block">
             <div className="bg-secondary-300 absolute md:w-[90%] lg:w-[80%] xl:w-[70%] text-white p-20 flex flex-col gap-8 -top-32 left-44 md:left-5 xl:left-10 sm:hidden">
                 <h2 className="text-4xl font-bold max-w-[20ch] leading-snug">
                     Mrówka, przyjaciółka Twojego domu!
@@ -28,7 +28,7 @@ function Info() {
             <div className="hidden sm:block bg-secondary-300 py-10 text-center text-white text-lg font-bold">
                 Mrówka, przyjaciółka Twojego domu!
             </div>
-        </div>
+        </section>
     );
 }
 

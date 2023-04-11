@@ -10,7 +10,7 @@ function Hero() {
             </h1>
 
             {/* mobile */}
-            <h1 className="text-6xl text-white font-bold trace sm:block hidden">
+            <h1 className="text-[4rem] text-white font-bold leading-tight sm:block hidden">
                 DOM <br />
                 WNĘTRZE <br />
                 OGRÓD

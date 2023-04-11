@@ -13,7 +13,7 @@ function Day({ day, hours }) {
 function Contact() {
     return (
         <div
-            className="h-[70rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 mt-10 rounded-b-[1.8rem] z-10 bg-gray-100 sm:translate-y-5"
+            className="h-[60rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 mt-10 sm:rounded-b-[1.8rem] z-10 bg-gray-100 sm:translate-y-5"
             id="contact"
         >
             <div className="flex justify-between w-full px-16 lg:px-4 md:px-1 gap-5 h-[28rem] sm:hidden">
@@ -97,15 +97,17 @@ function Contact() {
 
             {/* mobile */}
 
-            <div className="hidden sm:flex flex-col w-full gap-6 px-8">
-                <h2 className="text-2xl font-bold ">Kontakt</h2>
-                <div className="w-full h-1 bg-20-black rounded-3xl" />
+            <div className="hidden sm:flex flex-col w-full gap-6 px-8 pb-6">
+                <div className="flex flex-col gap-3">
+                    <h2 className="text-3xl font-bold ">Kontakt</h2>
+                    <div className="w-full h-1 bg-20-black rounded-3xl" />
+                </div>
 
                 <div className="flex flex-col gap-8 justify-between mt-2">
                     <div className="flex gap-10">
                         <img
                             src="/assets/phone-black.svg"
-                            className="h-full w-7"
+                            className="h-7 w-8"
                         />
 
                         <div>
@@ -115,10 +117,7 @@ function Contact() {
                     </div>
 
                     <div className="flex gap-10">
-                        <img
-                            src="/assets/mail-black.svg"
-                            className="h-full w-7"
-                        />
+                        <img src="/assets/mail-black.svg" className="h-8 w-8" />
 
                         <div>
                             <h4 className="font-bold">Email</h4>
@@ -129,7 +128,7 @@ function Contact() {
                     <div className="flex gap-10 mt-10">
                         <img
                             src="/assets/location-black.svg"
-                            className="h-full w-7"
+                            className="h-7 w-8"
                         />
 
                         <div>

@@ -17,11 +17,11 @@ const linkBarVariants = {
     },
 };
 
-const NavLinkDesktop = ({ title, destination }) => {
+const NavLinkDesktop = ({ title, destination, offset = 0 }) => {
     return (
         <motion.li
             className="cursor-pointer relative self-start"
-            onClick={() => scrollTo(destination)}
+            onClick={() => scrollTo(destination, offset)}
             initial="unHovered"
             whileHover="hovered"
             whileTap="tapped"
@@ -40,12 +40,12 @@ const NavLinkDesktop = ({ title, destination }) => {
     );
 };
 
-const NavLinkMobile = ({ title, destination, setMenuOpen }) => {
+const NavLinkMobile = ({ title, destination, offset = 0, setMenuOpen }) => {
     return (
         <motion.li
             className="cursor-pointer relative self-start"
             onClick={() => {
-                scrollTo(destination);
+                scrollTo(destination, offset);
                 setMenuOpen(false);
             }}
             initial="unHovered"
@@ -77,7 +77,11 @@ function Nav() {
                 className="absolute top-0 left-40 lg:left-10 w-16 sm:w-14 z-50 sm:left-5 sm:fixed"
             />
             <ul className="flex items-center gap-14 text-md sm:hidden">
-                <NavLinkDesktop title={"Oferta"} destination={"offer"} />
+                <NavLinkDesktop
+                    title={"Oferta"}
+                    destination={"offer"}
+                    offset={100}
+                />
                 <NavLinkDesktop title={"O nas"} destination={"about"} />
                 <NavLinkDesktop title={"Kontakt"} destination={"contact"} />
             </ul>
@@ -116,6 +120,7 @@ function Nav() {
                 />
                 <NavLinkMobile
                     destination={"contact"}
+                    offset={80}
                     title={"Kontakt"}
                     setMenuOpen={setMenuOpen}
                 />

@@ -45,7 +45,7 @@ function About() {
     const [openHours, setOpenHours] = useState(false);
 
     return (
-        <div
+        <section
             className="h-[45rem] lg:h-[60rem] justify-center items-center border-primary-400 border-b-10 sm:border-none flex sm:h-auto sm:px-8 sm:flex-col"
             id="about"
         >
@@ -170,7 +170,7 @@ function About() {
                     </ul>
                 </section>
             </div>
-        </div>
+        </section>
     );
 }
 
