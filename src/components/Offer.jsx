@@ -73,6 +73,7 @@ function Offer() {
                                     title={data.title}
                                     description={data.description}
                                     image={data.image}
+                                    placeholderImage={data.placeholder}
                                     key={idx}
                                 />
                             </SwiperSlide>
@@ -100,6 +101,7 @@ function Offer() {
                                     title={data.title}
                                     description={data.description}
                                     image={data.image}
+                                    placeholderImage={data.placeholder}
                                     key={idx}
                                 />
                             </SwiperSlide>

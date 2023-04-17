@@ -22,8 +22,7 @@ export default {
                 "20-white": "rgba(246, 246, 246, 0.2)",
             },
             backgroundImage: {
-                hero: "url('/assets/hero.png')",
-                offer: "url('/assets/budowa.png')",
+                info: "url('/assets/info.jpg')",
             },
 
             fontFamily: {
@@ -40,19 +39,14 @@ export default {
 
         screens: {
             "2xl": { max: "1535px" },
-            // => @media (max-width: 1535px) { ... }
 
             xl: { max: "1279px" },
-            // => @media (max-width: 1279px) { ... }
 
             lg: { max: "1023px" },
-            // => @media (max-width: 1023px) { ... }
 
             md: { max: "767px" },
-            // => @media (max-width: 767px) { ... }
 
             sm: { max: "639px" },
-            // => @media (max-width: 639px) { ... }
         },
     },
 

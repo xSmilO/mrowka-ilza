@@ -70,7 +70,7 @@ function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <div className="flex justify-center items-center sm:justify-end absolute top-0 w-full text-white p-7 border-b-2 sm:border-0 border-20-white">
+        <nav className="flex justify-center items-center sm:justify-end absolute top-0 w-full text-white p-7 border-b-2 sm:border-0 border-20-white z-[2]">
             <img
                 src="/assets/icon.svg"
                 alt=""
@@ -82,7 +82,11 @@ function Nav() {
                     destination={"offer"}
                     offset={100}
                 />
-                <NavLinkDesktop title={"O nas"} destination={"about"} />
+                <NavLinkDesktop
+                    title={"O nas"}
+                    destination={"about"}
+                    offset={180}
+                />
                 <NavLinkDesktop title={"Kontakt"} destination={"contact"} />
             </ul>
 
@@ -139,7 +143,7 @@ function Nav() {
                     className="w-full h-full"
                 />
             </motion.div>
-        </div>
+        </nav>
     );
 }
 

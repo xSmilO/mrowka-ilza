@@ -1,35 +1,5 @@
 import React, { useState } from "react";
-
-const daysInfo = [
-    {
-        day: "Poniedziałek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Wtorek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Środa",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Czwartek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Piątek",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Sobota",
-        hours: "7.00-21.00",
-    },
-    {
-        day: "Niedziela",
-        hours: "9.00-20.00",
-    },
-];
+import { daysInfo } from "../utils/data";
 
 function Day({ day, hours }) {
     return (
@@ -58,20 +28,22 @@ function About() {
                 <div className="flex flex-col gap-8 w-1/2 font-light text-80-black text-lg">
                     <p className="leading-8">
                         <span className="font-bold">PSB Mrówka Iłża</span>
-                        &nbsp;to nowoczesny market z sieci PSB Mrówka należącej
-                        do sektora dom i ogród.&nbsp;
-                        <span className="font-bold">Oferujemy</span> materiały
-                        budowlane, remontowe i wykończeniowe czy akcesoria do
-                        urządzenia domu bez względu na etap inwestycji. 
+                        &nbsp;zatrudnia wykwalifikowaną obsługę, która chętnie
+                        służy pomocą w doborze odpowiednich materiałów i
+                        narzędzi oraz udzieli fachowej porady. Kładziemy duży
+                        nacisk na jakość obsługi, zapewniając szybką i sprawną
+                        obsługę, a także profesjonalne podejście do każdego
+                        klienta.
                     </p>
                     <p className="leading-8">
                         Klienci, którzy odwiedzą sklep Mrówka Iłża, znajdą tam
-                        również szeroki wybór materiałów wykończeniowych, takich
-                        jak płytki ceramiczne, panele podłogowe, dekoracje
-                        ścienne, armatury łazienkowe i wiele innych produktów.
-                        Sklep oferuje także bogaty wybór narzędzi ogrodniczych,
-                        takich jak kosiarki, podkaszarki, nożyce do żywopłotów,
-                        a także narzędzia do pielęgnacji roślin.
+                        również <span className="font-bold">szeroki wybór</span>
+                        &nbsp;materiałów wykończeniowych, takich jak płytki
+                        ceramiczne, panele podłogowe, dekoracje ścienne,
+                        armatury łazienkowe i wiele innych produktów. Sklep
+                        oferuje także bogaty wybór narzędzi ogrodniczych, takich
+                        jak kosiarki, podkaszarki, nożyce do żywopłotów, a także
+                        narzędzia do pielęgnacji roślin.
                     </p>
                 </div>
             </div>

@@ -20,3 +20,9 @@
     background-color: hsla(45, 100%, 50%, 1);
 }
 
+.lazy-load-image-background {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+

@@ -1,5 +1,9 @@
 import React from "react";
-import { daysInfo } from "../utils/data";
+import { contact, daysInfo, sliderItems } from "../utils/data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+
+import "swiper/css/autoplay";
 
 function Day({ day, hours }) {
     return (
@@ -12,11 +16,32 @@ function Day({ day, hours }) {
 
 function Contact() {
     return (
-        <div
-            className="h-[60rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start relative p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 mt-10 sm:rounded-b-[1.8rem] z-10 bg-gray-100 sm:translate-y-5"
+        <section
+            className="h-[60rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 sm:mt-10 sm:rounded-b-[1.8rem] sm:z-[20] bg-gray-100 sm:translate-y-5 relative"
             id="contact"
         >
-            <div className="flex justify-between w-full px-16 lg:px-4 md:px-1 gap-5 h-[28rem] sm:hidden">
+            <Swiper
+                modules={[Autoplay]}
+                slidesPerView={5}
+                loop={true}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                }}
+                speed={3000}
+                className="sm:hidden absolute top-0 left-0 h-40 w-full"
+            >
+                {sliderItems.map((slideData, idx) => (
+                    <SwiperSlide key={idx}>
+                        <img
+                            src={slideData.image}
+                            className="w-full h-full object-cover"
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            <div className="flex justify-between w-full px-16 lg:px-4 md:px-1 gap-5 h-[28rem] sm:hidden mt-36">
                 <div className="bg-gray-200 p-16 md:p-10 lg:p-12 flex flex-col gap-6 w-[35%] flex-grow justify-center">
                     <h2 className="text-70-black text-3xl md:text-2xl font-bold">
                         Godziny otwarcia
@@ -58,7 +83,7 @@ function Contact() {
                                     <h4 className="font-bold text-lg">
                                         Telefon
                                     </h4>
-                                    <p>(0-00) 000 00 00</p>
+                                    <p>{contact.phone}</p>
                                 </div>
                             </div>
 
@@ -73,7 +98,7 @@ function Contact() {
 
                                 <div className="flex flex-col">
                                     <h4 className="font-bold text-lg">Email</h4>
-                                    <p>miasto@psbmrowka.pl</p>
+                                    <p>{contact.mail}</p>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +113,8 @@ function Contact() {
                             />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <h4 className="font-bold">ul. Nazwa ulicy 123</h4>
-                            <p>27-100 Iłża</p>
+                            <h4 className="font-bold">{contact.address}</h4>
+                            <p>{contact.postalCode}</p>
                         </div>
                     </div>
                 </div>
@@ -112,7 +137,7 @@ function Contact() {
 
                         <div>
                             <h4 className="font-bold">Telefon</h4>
-                            <p>(0-00) 000 00 00</p>
+                            <p>{contact.phone}</p>
                         </div>
                     </div>
 
@@ -121,7 +146,7 @@ function Contact() {
 
                         <div>
                             <h4 className="font-bold">Email</h4>
-                            <p>miasto@psbmrowka.pl</p>
+                            <p>{contact.mail}</p>
                         </div>
                     </div>
 
@@ -132,15 +157,13 @@ function Contact() {
                         />
 
                         <div>
-                            <h4 className="font-semibold">
-                                ul. Nazwa ulicy 123
-                            </h4>
-                            <p>27-100 Iłża</p>
+                            <h4 className="font-semibold">{contact.address}</h4>
+                            <p>{contact.postalCode}</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
