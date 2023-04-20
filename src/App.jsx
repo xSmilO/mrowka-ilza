@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import ScrollUp from "./components/ScrollUp";
 
 function App() {
     return (
@@ -19,7 +20,7 @@ function App() {
             <Contact />
             <Location />
             <Footer />
-            
+            <ScrollUp />
         </div>
     );
 }

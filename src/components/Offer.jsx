@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import OfferItem from "./OfferItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual, FreeMode, Scrollbar } from "swiper";
@@ -12,6 +12,7 @@ import "swiper/css/scrollbar";
 
 function Offer() {
     const swiperRef = useRef(null);
+    const sectionRef = useRef(null);
 
     return (
         <section
@@ -82,6 +83,7 @@ function Offer() {
 
                     {/* mobile slider */}
                     <Swiper
+                        // ref={swiperRef}
                         spaceBetween={"-10%"}
                         slidesPerView={"auto"}
                         modules={[Virtual, FreeMode, Scrollbar]}
@@ -125,7 +127,7 @@ function Offer() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-10 sm:mt-20">
+            <div className="flex flex-col gap-10 sm:mt-20" ref={sectionRef}>
                 <p className="text-center text-lg sm:text-base text-90-black">
                     Ponadto, sklep oferuje&nbsp;
                     <span className="font-bold">konkurencyjne ceny</span> oraz

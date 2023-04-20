@@ -70,7 +70,7 @@ function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="flex justify-center items-center sm:justify-end absolute top-0 w-full text-white p-7 border-b-2 sm:border-0 border-20-white z-[2]">
+        <nav className="flex justify-center items-center sm:justify-end absolute top-0 w-full text-white p-7 border-b-2 sm:border-0 border-20-white z-[15]">
             <img
                 src="/assets/icon.svg"
                 alt=""
@@ -92,7 +92,7 @@ function Nav() {
 
             {/* mobile */}
             <div
-                className="hidden sm:block cursor-pointer z-30 right-5 top-8"
+                className="hidden sm:block cursor-pointer z-40 right-5 top-8"
                 onClick={() => setMenuOpen(!menuOpen)}
                 style={{ position: menuOpen ? "fixed" : "absolute" }}
             >
@@ -107,7 +107,7 @@ function Nav() {
             </div>
 
             <ul
-                className=" w-[70%] h-screen bg-white fixed top-0 right-0 text-secondary-400 flex flex-col justify-center p-10 text-3xl font-bold gap-10 transition-all z-20"
+                className=" w-[70%] h-screen bg-white fixed top-0 right-0 text-secondary-400 flex flex-col justify-center p-10 text-3xl font-bold gap-10 transition-all z-30"
                 style={{
                     transform: menuOpen ? "translateX(0)" : "translateX(100%)",
                 }}
@@ -121,6 +121,7 @@ function Nav() {
                     destination={"about"}
                     title={"O nas"}
                     setMenuOpen={setMenuOpen}
+                    offset={100}
                 />
                 <NavLinkMobile
                     destination={"contact"}
@@ -129,20 +130,6 @@ function Nav() {
                     setMenuOpen={setMenuOpen}
                 />
             </ul>
-
-            <motion.div
-                className="bg-primary-400 fixed w-8 h-8 p-2 rounded-full cursor-pointer bottom-8 right-8 z-20 sm:hidden"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                whileHover={{ scale: 1.3 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "tween", duration: 0.1 }}
-            >
-                <img
-                    src="/assets/arrowUp.svg"
-                    alt=""
-                    className="w-full h-full"
-                />
-            </motion.div>
         </nav>
     );
 }

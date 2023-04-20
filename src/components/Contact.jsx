@@ -17,7 +17,7 @@ function Day({ day, hours }) {
 function Contact() {
     return (
         <section
-            className="h-[60rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 sm:mt-10 sm:rounded-b-[1.8rem] sm:z-[20] bg-gray-100 sm:translate-y-5 relative"
+            className="h-[60rem] lg:h-[50rem] sm:h-auto w-full flex items-center justify-center sm:items-start p-10 px-48 md:px-0 lg:px-0 xl:p-4 2xl:px-0 sm:mt-10 sm:rounded-b-[1.8rem] bg-gray-100 sm:translate-y-5 relative sm:z-10"
             id="contact"
         >
             <Swiper
